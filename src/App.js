@@ -33,6 +33,7 @@ const App = () => {
   
   return (
     <div className="App">
+     
       <form onSubmit={handleSubmit}>
           <label>
             <input type="text" onChange={handleChange} placeholder="Pokemon Name" />
