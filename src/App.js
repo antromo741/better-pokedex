@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import axios from "axios";
 import './App.css';
 
@@ -43,7 +43,7 @@ const App = () => {
           //Def need to come back and refactor with tailwind
           //Perhaps display some base stats on the card component
           return(
-          <div class name="container">
+          <div className="container">
             
             <img src={data.sprites["front_default"]}/>
 
