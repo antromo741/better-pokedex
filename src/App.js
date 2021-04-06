@@ -48,7 +48,7 @@ const App = () => {
             <img src={data.sprites["front_default"]}/>
 
             <div className="divTable">
-              <div className="divTableBody"></div>
+              <div className="divTableBody">
                 <div className="divTableRow">
                   <div className="divTableCell">Type</div>
                   <div className="divTableCell">{pokemonType}</div>
@@ -74,10 +74,10 @@ const App = () => {
                   <div className="divTableCell">Number of Battles</div>
                   <div className="divTableCell">{data.game_indices.length}</div>
                 </div>
-
               </div>
             </div>
-          )
+            </div>
+          );
         })}
     </div>
   );
