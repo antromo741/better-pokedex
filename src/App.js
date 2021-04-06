@@ -12,6 +12,9 @@ const App = () => {
     try {
       const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
       const res = await axios.get(url)
+      toArray.push(res.data)
+      setPokemonType(res.data.types[0].type.name);
+      setPokemonData(toArray)
       console.log(res)
     } catch (e) {
       console.log(e)
@@ -35,8 +38,41 @@ const App = () => {
             <input type="text" onChange={handleChange} placeholder="Pokemon Name" />
           </label>
         </form>
+
+        {pokemonData.map((data) => {
+          //Def need to come back and refactor with tailwind
+          return(
+          <div class name="container">
+            <img />
+            <div className="divTable">
+              <div className="divTableBody"></div>
+                <div className="divTableRow">
+                  <div className="divTableCell">Type</div>
+                  <div className="divTableCell">{pokemonType}</div>
+                </div>
+                <div className="divTableRow">
+                  <div className="divTableCell">Height</div>
+                  <div className="divTableCell">
+                    {" "}
+                    {Math.round(data.height * 3.9)}
+                    </div>
+                </div>
+                <div className="divTableRow">
+                  <div className="divTableCell">Weight</div>
+                  <div className="divTableCell">{" "}
+                  {Math.round(data.weight / 4.3 )} lbs
+                  </div>
+                </div>
+                <div className="divTableRow">
+                  <div className="divTableCell">Number of Battles</div>
+                  <div className="divTableCell">{data.game_indices.length}</div>
+                </div>
+              </div>
+            </div>
+          )
+        })}
     </div>
   );
-}
+};
 
 export default App;
